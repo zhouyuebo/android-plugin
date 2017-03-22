@@ -1,14 +1,14 @@
-package mobcb.android.plug.core;
+package mobcb.android.plugin.core;
 
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
-import mobcb.android.plug.component.BasePluginActivity;
-import mobcb.android.plug.component.BasePluginFragmentActivity;
-import mobcb.android.plug.container.ProxyActivity;
-import mobcb.android.plug.container.ProxyFragmentActivity;
+import mobcb.android.plugin.component.BasePluginActivity;
+import mobcb.android.plugin.component.BasePluginFragmentActivity;
+import mobcb.android.plugin.proxy.ProxyActivity;
+import mobcb.android.plugin.proxy.ProxyFragmentActivity;
 
 public class PluginLauncher {
     public static final String KEY_PLUGIN_PACKAGE = "plugin_package";

@@ -1,5 +1,5 @@
 
-package mobcb.android.plug.core;
+package mobcb.android.plugin.core;
 
 import android.content.Intent;
 import android.os.Parcelable;

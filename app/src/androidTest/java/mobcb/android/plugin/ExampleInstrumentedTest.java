@@ -1,4 +1,4 @@
-package mobcb.android.plug;
+package mobcb.android.plugin;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

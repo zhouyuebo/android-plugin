@@ -1,5 +1,5 @@
 
-package mobcb.android.plug.container;
+package mobcb.android.plugin.proxy;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,11 +15,11 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.WindowManager.LayoutParams;
 
-import mobcb.android.plug.component.PluginActivity;
-import mobcb.android.plug.core.Plugin;
-import mobcb.android.plug.core.PluginLauncher;
-import mobcb.android.plug.core.PluginLoader;
-import mobcb.android.plug.core.PluginUtils;
+import mobcb.android.plugin.component.PluginActivity;
+import mobcb.android.plugin.core.Plugin;
+import mobcb.android.plugin.core.PluginLauncher;
+import mobcb.android.plugin.core.PluginLoader;
+import mobcb.android.plugin.core.PluginUtils;
 
 public class ProxyActivity extends Activity {
 

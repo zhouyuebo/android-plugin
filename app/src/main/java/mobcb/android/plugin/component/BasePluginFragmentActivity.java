@@ -1,15 +1,14 @@
 
 
-package mobcb.android.plug.component;
+package mobcb.android.plugin.component;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.app.FragmentActivity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -21,10 +20,10 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.view.WindowManager;
 
-import mobcb.android.plug.core.Plugin;
+import mobcb.android.plugin.core.Plugin;
 
 
-public class BasePluginActivity extends Activity implements PluginActivity {
+public class BasePluginFragmentActivity extends FragmentActivity implements PluginActivity {
 
 
     protected Activity proxyActivity;

@@ -1,4 +1,4 @@
-package mobcb.android.plug;
+package mobcb.android.plugin;
 
 import org.junit.Test;
 

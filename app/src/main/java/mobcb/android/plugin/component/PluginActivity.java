@@ -1,4 +1,4 @@
-package mobcb.android.plug.component;
+package mobcb.android.plugin.component;
 
 
 import android.app.Activity;
@@ -9,10 +9,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.WindowManager;
-import mobcb.android.plug.core.Plugin;
+import mobcb.android.plugin.core.Plugin;
 
 public interface PluginActivity {
-    public void bindProxy(Plugin plugin,Activity proxyActivity);
+    public void bindProxy(Plugin plugin, Activity proxyActivity);
     public void onCreate(Bundle savedInstanceState);
     public void onStart();
     public void onRestart();

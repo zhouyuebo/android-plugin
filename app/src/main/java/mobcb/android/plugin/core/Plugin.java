@@ -1,4 +1,4 @@
-package mobcb.android.plug.core;
+package mobcb.android.plugin.core;
 
 import android.content.pm.PackageInfo;
 import android.content.res.AssetManager;

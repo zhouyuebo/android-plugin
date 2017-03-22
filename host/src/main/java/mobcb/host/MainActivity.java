@@ -6,9 +6,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import mobcb.android.plug.core.PluginIntent;
-import mobcb.android.plug.core.PluginLauncher;
-import mobcb.android.plug.core.PluginLoader;
+import mobcb.android.plugin.core.PluginIntent;
+import mobcb.android.plugin.core.PluginLauncher;
+import mobcb.android.plugin.core.PluginLoader;
 
 public class MainActivity extends AppCompatActivity {
     private Button startPluginBtn;
