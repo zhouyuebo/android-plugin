@@ -4,9 +4,11 @@ package mobcb.android.plugin.core;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 import android.text.TextUtils;
-import mobcb.android.plugin.component.BasePluginActivity;
-import mobcb.android.plugin.component.BasePluginFragmentActivity;
+
+import mobcb.android.plugin.app.BasePluginActivity;
+import mobcb.android.plugin.app.BasePluginFragmentActivity;
 import mobcb.android.plugin.proxy.ProxyActivity;
 import mobcb.android.plugin.proxy.ProxyFragmentActivity;
 
@@ -20,6 +22,26 @@ public class PluginLauncher {
     public static final int RESULT_NO_CLASS = 3;
     public static final int RESULT_UNKNOWN_PLUGIN_TYPE = 4;
 
+
+    public static void launcherPluginActivity(final Context context, String apkPath, String packageName, String activityClass) {
+
+        final PluginIntent intent = new PluginIntent(packageName, activityClass);
+        PluginLoader loader = PluginLoader.getInstance(context);
+
+        if (loader.hasPlugin(packageName)) {
+            startActivity(context, intent);
+            return;
+        }
+
+        loader.loadPluginAsync(apkPath, new Handler(), new PluginLoader.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(Plugin plugin) {
+                startActivity(context, intent);
+            }
+        });
+
+    }
+
     public static int startActivity(Context context, PluginIntent intent) {
         return startActivityForResult(context, intent, -1);
     }
@@ -31,7 +53,7 @@ public class PluginLauncher {
             throw new NullPointerException("Plugin packageName is null.");
         }
 
-        Plugin plugin=PluginLoader.getInstance(context).findPlugin(packageName);
+        Plugin plugin = PluginLoader.getInstance(context).findPlugin(packageName);
         if (plugin == null) {
             return RESULT_NOT_INSTALLED;
         }
@@ -40,7 +62,7 @@ public class PluginLauncher {
 
         Class<?> clazz = null;
         try {
-            clazz=PluginUtils.loadClass(plugin.classLoader,className) ;
+            clazz = PluginUtils.loadClass(plugin.classLoader, className);
         } catch (ClassNotFoundException e) {
             return RESULT_NO_CLASS;
         }

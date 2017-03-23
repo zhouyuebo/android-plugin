@@ -1,6 +1,6 @@
 
 
-package mobcb.android.plugin.component;
+package mobcb.android.plugin.app;
 
 import android.app.Activity;
 import android.content.Context;

@@ -13,7 +13,7 @@ import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-public class SoLibCopyUtils {
+public class LibCopyUtils {
 
 
     public static void copyPluginSoLib(Context context, String apkPath, String libs) {

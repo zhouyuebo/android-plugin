@@ -15,7 +15,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.WindowManager.LayoutParams;
 
-import mobcb.android.plugin.component.PluginActivity;
+import mobcb.android.plugin.app.PluginActivity;
 import mobcb.android.plugin.core.Plugin;
 import mobcb.android.plugin.core.PluginLauncher;
 import mobcb.android.plugin.core.PluginLoader;
