@@ -9,7 +9,8 @@
     tools:context="mobcb.plugin.MainActivity">
 
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="我是插件页面" />
+        android:text="我是插件页面AAA" />
+
 
     <Button
         android:id="@+id/next_btn"

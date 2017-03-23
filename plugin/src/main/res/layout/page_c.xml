@@ -9,13 +9,5 @@
     tools:context="mobcb.plugin.MainActivity">
 
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="我是插件页面" />
-
-    <Button
-        android:id="@+id/next_btn"
-        android:text="下一页"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        />
+        android:text="我是插件页面CCC" />
 </RelativeLayout>

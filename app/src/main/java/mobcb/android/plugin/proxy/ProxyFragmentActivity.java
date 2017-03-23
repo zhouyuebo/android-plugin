@@ -46,6 +46,7 @@ public class ProxyFragmentActivity extends FragmentActivity {
         plugin = PluginLoader.getInstance(getApplicationContext()).findPlugin(pluginPackage);
         try {
             pluginActivity = (PluginActivity) PluginUtils.instantiationClass(plugin.classLoader, pluginClass);
+            pluginActivity.bindProxy(plugin,this);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

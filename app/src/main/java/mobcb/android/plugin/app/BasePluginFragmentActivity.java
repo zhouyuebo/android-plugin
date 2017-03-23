@@ -9,6 +9,8 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.LoaderManager;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -21,12 +23,15 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import mobcb.android.plugin.core.Plugin;
+import mobcb.android.plugin.core.PluginIntent;
+import mobcb.android.plugin.core.PluginLauncher;
+import mobcb.android.plugin.proxy.ProxyFragmentActivity;
 
 
 public class BasePluginFragmentActivity extends FragmentActivity implements PluginActivity {
 
 
-    protected Activity proxyActivity;
+    protected ProxyFragmentActivity proxyActivity;
     protected Plugin plugin;
 
     @Override
@@ -37,7 +42,7 @@ public class BasePluginFragmentActivity extends FragmentActivity implements Plug
     @Override
     public void bindProxy(Plugin plugin,Activity proxyActivity) {
         this.plugin=plugin;
-        this.proxyActivity=proxyActivity;
+        this.proxyActivity= (ProxyFragmentActivity) proxyActivity;
     }
 
     @Override
@@ -197,5 +202,27 @@ public class BasePluginFragmentActivity extends FragmentActivity implements Plug
 
     public boolean onOptionsItemSelected(MenuItem item) {
         return false;
+    }
+
+    public int startActivity(PluginIntent intent) {
+        return startActivityForResult(intent, -1);
+    }
+
+    public int startActivityForResult(PluginIntent intent, int requestCode) {
+        return PluginLauncher.startActivityForResult(proxyActivity, intent, requestCode);
+    }
+
+    @Override
+    public FragmentManager getSupportFragmentManager() {
+
+        return proxyActivity.getSupportFragmentManager();
+
+    }
+
+    @Override
+    public LoaderManager getSupportLoaderManager() {
+
+        return proxyActivity.getSupportLoaderManager();
+
     }
 }

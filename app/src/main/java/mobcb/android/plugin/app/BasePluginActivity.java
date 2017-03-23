@@ -20,6 +20,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import mobcb.android.plugin.core.Plugin;
+import mobcb.android.plugin.core.PluginIntent;
+import mobcb.android.plugin.core.PluginLauncher;
 
 
 public class BasePluginActivity extends Activity implements PluginActivity {
@@ -34,9 +36,9 @@ public class BasePluginActivity extends Activity implements PluginActivity {
     }
 
     @Override
-    public void bindProxy(Plugin plugin,Activity proxyActivity) {
-        this.plugin=plugin;
-        this.proxyActivity=proxyActivity;
+    public void bindProxy(Plugin plugin, Activity proxyActivity) {
+        this.plugin = plugin;
+        this.proxyActivity = proxyActivity;
     }
 
     @Override
@@ -196,5 +198,13 @@ public class BasePluginActivity extends Activity implements PluginActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         return false;
+    }
+
+    public int startActivity(PluginIntent intent) {
+        return startActivityForResult(intent, -1);
+    }
+
+    public int startActivityForResult(PluginIntent intent, int requestCode) {
+        return PluginLauncher.startActivityForResult(proxyActivity, intent, requestCode);
     }
 }

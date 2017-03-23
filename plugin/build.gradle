@@ -29,5 +29,5 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.0.1'
     testCompile 'junit:junit:4.12'
-    provided files('build/libs/plugin.jar')
+    provided files('libs/plugin.jar')
 }
